@@ -76,6 +76,6 @@ function playGame() {
     } else {
         winner = 'The computer';
     }
-    console.log('Game over. ' + winner + 'Won.');
+    console.log('Game over. ' + winner + ' won.');
 }
 playGame()
