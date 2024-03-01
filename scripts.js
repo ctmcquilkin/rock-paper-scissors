@@ -1,4 +1,4 @@
-const choices = ['rock', 'paper', 'scissors'];
+const CHOICES = ['rock', 'paper', 'scissors'];
 let computerSelection = '';
 let playerSelection = '';
 let playerWins = 0;
@@ -13,7 +13,7 @@ function getComputerChoice() {
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
-    return computerSelection = choices[getRandomInt(1, 3)];
+    return computerSelection = CHOICES[getRandomInt(1, 3)];
 }
 
 function playRound(playerSelection, computerSelection) {
