@@ -1,7 +1,6 @@
-
+const choices = ['rock', 'paper', 'scissors'];
 let computerSelection = '';
 let playerSelection = '';
-let choices = ['rock', 'paper', 'scissors'];
 let playerWins = 0;
 let computerWins = 0;
 
