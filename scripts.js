@@ -4,10 +4,18 @@ let playerSelection = '';
 let playerWins = 0;
 let computerWins = 0;
 
-function getPlayerSelection() {
-    let playerSelection = window.prompt('Choose: Rock, Paper, or Scissors', '');
-    return playerSelection.toLowerCase();
-}
+const buttons = document.querySelectorAll('button');
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+  // and for each one we add a 'click' listener
+  button.addEventListener('click', () => {
+    let computerChoice = getComputerChoice();
+    // alert(button.id);
+    playRound(button.id, computerChoice);
+  });
+});
 
 function getComputerChoice() {
     function getRandomInt(max) {
@@ -17,7 +25,7 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = getPlayerSelection();
+    playerSelection = playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
     console.log('Player Selection: ' + playerSelection + " Computer Selection: " + computerSelection);
     switch(playerSelection) {
@@ -62,19 +70,3 @@ function playRound(playerSelection, computerSelection) {
             }
     }
   }
-
-function playGame() {
-    let winner = '';
-    for ( let i = 1; i < 6; i++ ) {
-        console.log("Rock Paper Sissors! Round: " + i);
-        playRound(playerSelection, computerSelection);
-        
-    }
-    if ( playerWins > computerWins ) {
-        winner = 'You';
-    } else {
-        winner = 'The computer';
-    }
-    console.log('Game over. ' + winner + ' won.');
-}
-playGame()
