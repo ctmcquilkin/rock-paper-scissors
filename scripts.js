@@ -7,6 +7,9 @@ let computerWins = 0;
 const buttons = document.querySelectorAll('button');
 const container = document.querySelector('#info'); 
 
+let winner = document.createElement('p');
+let selections = document.createElement('p');
+
 // we use the .forEach method to iterate through each button
 buttons.forEach((button) => {
 
@@ -28,8 +31,6 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
-    let selections = document.createElement('p');
-    let winner = document.createElement('p');
     selections.textContent = 'Player Selection: ' + playerSelection + " Computer Selection: " + computerSelection;
     container.appendChild(selections);
     container.appendChild(winner);
